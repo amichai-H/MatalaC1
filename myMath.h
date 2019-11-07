@@ -1,3 +1,5 @@
+#ifndef myMath.h
+#define myMath.h
 
 float add(float x, float y);
 
@@ -10,3 +12,5 @@ double div(double x, int y);
 double exp(int x);
 
 double pow(double x, int y);
+
+#endif
