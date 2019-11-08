@@ -2,24 +2,27 @@
 #include "myMath.h"
 #define EXP 2.71828182846
 
-double exp(int x){
+double Exp(int x){
 	int i = 0;
-	double sum = 0;
-	for(i=0; i<x ; i++){
-		sum = sum + EXP;
+	if (x == 0){
+		return 1;
+	}
+	double sum = EXP;
+	for(i=1; i<x ; i++){
+		sum = mul(sum,EXP);
 	}
 	return sum;
 }
 
-double pow(double x, int y){
+double Pow(double x, int y){
 	int i = 0;
-	int sum =0;
+	int sum =x;
 	if (y==0){
-		sum = 1;
+		return 1;
 	}
 	else{
-		for(i=0; i<y ; i++){
-			sum = sum + x;
+		for(i=1; i<y ; i++){
+			sum = mul(sum,x);
 		}
 	}
 	return sum;
