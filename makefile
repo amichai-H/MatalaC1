@@ -5,14 +5,14 @@ OBJECTS_LIB=basicMath.o power.o
 OBJECTS_ALL=libmyMath.so libmyMath.a mains progmaind
 FLAGS= -Wall -g
 
-all: libmyMath.so libmyMath.a mains progmaind
+all: mymathd mymaths mains maind
 mains: $(OBJECTS_MAIN) libmyMath.a
 	$(CC) $(FLAGS) -o mains $(OBJECTS_MAIN) libmyMath.a
-progmaind: $(OBJECTS_MAIN)
+maind: $(OBJECTS_MAIN)
 	$(CC) $(FLAGS) -o maind $(OBJECTS_MAIN) ./libmyMath.so
-libmyMath.so: $(OBJECTS_LIB)
+mymathd: $(OBJECTS_LIB)
 	$(CC) -shared -o libmyMath.so $(OBJECTS_LIB)
-libmyMath.a: $(OBJECTS_LIB)
+mymaths: $(OBJECTS_LIB)
 	$(AR) -rcs libmyMath.a $(OBJECTS_LIB)
 basicMath.o: basicMath.c myMath.h
 	$(CC) $(FLAGS) -c basicMath.c
