@@ -9,7 +9,7 @@ double Exp(int x){
 	}
 	double sum = EXP;
 	for(i=1; i<x ; i++){
-		sum = mul(sum,EXP);
+		sum = mul(EXP,x);
 	}
 	return sum;
 }

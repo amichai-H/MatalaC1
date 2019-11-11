@@ -22,3 +22,4 @@ main.o: main.c myMath.h
 	$(CC) $(FLAGS) -c main.c
 clean:
 	rm $(OBJECTS_LIB) $(OBJECTS_MAIN) libmyMath.so libmyMath.a mains maind
+
