@@ -9,20 +9,20 @@ double Exp(int x){
 	}
 	double sum = EXP;
 	for(i=1; i<x ; i++){
-		sum = mul(sum,EXP);
+		sum = EXP*sum;
 	}
 	return sum;
 }
 
 double Pow(double x, int y){
 	int i = 0;
-	int sum =x;
+	double sum =x;
 	if (y==0){
 		return 1;
 	}
 	else{
 		for(i=1; i<y ; i++){
-			sum = mul(sum,x);
+			sum = sum*x;
 		}
 	}
 	return sum;
