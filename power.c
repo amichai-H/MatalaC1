@@ -8,8 +8,17 @@ double Exp(int x){
 		return 1;
 	}
 	double sum = EXP;
-	for(i=1; i<x ; i++){
-		sum = EXP*sum;
+	if (x>0){
+		for(i=1; i<x ; i++){
+			sum = EXP*sum;
+		}
+	}
+	else{
+		sum = 1/sum;
+		x=x*-1;
+		for(i=1; i<x ; i++){
+			sum = sum/EXP;
+		}
 	}
 	return sum;
 }
@@ -20,9 +29,16 @@ double Pow(double x, int y){
 	if (y==0){
 		return 1;
 	}
-	else{
+	if (y>0){
 		for(i=1; i<y ; i++){
 			sum = sum*x;
+		}
+	}
+	else{
+		sum = 1/sum;
+		y=y*-1;
+		for(i=1; i<y ; i++){
+			sum = sum/x;
 		}
 	}
 	return sum;
