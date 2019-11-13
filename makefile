@@ -10,9 +10,11 @@ mains: $(OBJECTS_MAIN) mymaths
 	$(CC) $(FLAGS) -o mains $(OBJECTS_MAIN) libmyMath.a
 maind: $(OBJECTS_MAIN) mymathd
 	$(CC) $(FLAGS) -o maind $(OBJECTS_MAIN) ./libmyMath.so
-mymathd: $(OBJECTS_LIB)
+mymathd: libmyMath.so
+libmyMath.s: $(OBJECTS_LIB)
 	$(CC) -shared -o libmyMath.so $(OBJECTS_LIB)
-mymaths: $(OBJECTS_LIB)
+mymaths: libmyMath.a
+libmyMath.a: $(OBJECTS_LIB)
 	$(AR) -rcs libmyMath.a $(OBJECTS_LIB)
 basicMath.o: basicMath.c myMath.h
 	$(CC) $(FLAGS) -c basicMath.c
@@ -23,4 +25,4 @@ main.o: main.c myMath.h
 clean:
 	rm *.o *.a *.so mains maind
 
-.PHONY: clean all
+.PHONY: clean all mymathd mymaths
